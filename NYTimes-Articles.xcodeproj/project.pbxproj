@@ -99,13 +99,9 @@
 		3D06116023A2257100D5AC77 /* NYTimes-Articles */ = {
 			isa = PBXGroup;
 			children = (
-				3D06116123A2257100D5AC77 /* AppDelegate.swift */,
-				3D06116323A2257100D5AC77 /* SceneDelegate.swift */,
-				3D06116523A2257100D5AC77 /* ViewController.swift */,
-				3D06116723A2257100D5AC77 /* Main.storyboard */,
-				3D06116A23A2257400D5AC77 /* Assets.xcassets */,
-				3D06116C23A2257400D5AC77 /* LaunchScreen.storyboard */,
 				3D06116F23A2257400D5AC77 /* Info.plist */,
+				3D06119223A22C4000D5AC77 /* Resource */,
+				3D06119123A22C3600D5AC77 /* Source */,
 			);
 			path = "NYTimes-Articles";
 			sourceTree = "<group>";
@@ -126,6 +122,26 @@
 				3D06118523A2257400D5AC77 /* Info.plist */,
 			);
 			path = "NYTimes-ArticlesUITests";
+			sourceTree = "<group>";
+		};
+		3D06119123A22C3600D5AC77 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				3D06116123A2257100D5AC77 /* AppDelegate.swift */,
+				3D06116323A2257100D5AC77 /* SceneDelegate.swift */,
+				3D06116523A2257100D5AC77 /* ViewController.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		3D06119223A22C4000D5AC77 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				3D06116723A2257100D5AC77 /* Main.storyboard */,
+				3D06116A23A2257400D5AC77 /* Assets.xcassets */,
+				3D06116C23A2257400D5AC77 /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
