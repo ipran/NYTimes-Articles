@@ -18,9 +18,7 @@ struct NYModel: Codable {
         case status, copyright
         case numResults = "num_results"
         case results
-        
     }
-    
 }
 
 // MARK: - Result
@@ -34,31 +32,58 @@ struct Result: Codable {
     let source: Source
     let id, assetID, views: Int
     let desFacet: [String]
-    let orgFacet, perFacet, geoFacet: [String]
+    let orgFacet, perFacet, geoFacet: Facet
     let media: [Media]
 
-//    enum CodingKeys: String, CodingKey {
-//        case url
-//        case adxKeywords = "adx_keywords"
-//        case column, section, byline, type, title, abstract
-//        case publishedDate = "published_date"
-//        case source, id
-//        case assetID = "asset_id"
-//        case views
-//        case desFacet = "des_facet"
-//        case orgFacet = "org_facet"
-//        case perFacet = "per_facet"
-//        case geoFacet = "geo_facet"
-//        case media
-//    }
-    
+    enum CodingKeys: String, CodingKey {
+        case url
+        case adxKeywords = "adx_keywords"
+        case column, section, byline, type, title, abstract
+        case publishedDate = "published_date"
+        case source, id
+        case assetID = "asset_id"
+        case views
+        case desFacet = "des_facet"
+        case orgFacet = "org_facet"
+        case perFacet = "per_facet"
+        case geoFacet = "geo_facet"
+        case media
+    }
+}
+
+enum Facet: Codable {
+    case string(String)
+    case stringArray([String])
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        if let x = try? container.decode([String].self) {
+            self = .stringArray(x)
+            return
+        }
+        if let x = try? container.decode(String.self) {
+            self = .string(x)
+            return
+        }
+        throw DecodingError.typeMismatch(Facet.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for Facet"))
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        switch self {
+        case .string(let x):
+            try container.encode(x)
+        case .stringArray(let x):
+            try container.encode(x)
+        }
+    }
 }
 
 // MARK: - Media
 struct Media: Codable {
     let type: MediaType
     let subtype: Subtype
-    let caption, copyright: String?
+    let caption, copyright: String
     let approvedForSyndication: Int
     let mediaMetadata: [MediaMetadatum]
 
@@ -66,9 +91,7 @@ struct Media: Codable {
         case type, subtype, caption, copyright
         case approvedForSyndication = "approved_for_syndication"
         case mediaMetadata = "media-metadata"
-        
     }
-    
 }
 
 // MARK: - MediaMetadatum
@@ -76,7 +99,6 @@ struct MediaMetadatum: Codable {
     let url: String
     let format: Format
     let height, width: Int
-    
 }
 
 enum Format: String, Codable {
@@ -90,27 +112,21 @@ enum Format: String, Codable {
     case square640 = "square640"
     case standardThumbnail = "Standard Thumbnail"
     case superJumbo = "superJumbo"
-    
 }
 
 enum Subtype: String, Codable {
     case photo = "photo"
-    
 }
 
 enum MediaType: String, Codable {
     case image = "image"
-    
 }
 
 enum Source: String, Codable {
     case theNewYorkTimes = "The New York Times"
-    
 }
 
 enum ResultType: String, Codable {
     case article = "Article"
     case interactive = "Interactive"
-    
 }
-

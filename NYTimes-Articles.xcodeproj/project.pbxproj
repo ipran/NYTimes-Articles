@@ -16,6 +16,13 @@
 		3D06117923A2257400D5AC77 /* NYTimes_ArticlesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D06117823A2257400D5AC77 /* NYTimes_ArticlesTests.swift */; };
 		3D06118423A2257400D5AC77 /* NYTimes_ArticlesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D06118323A2257400D5AC77 /* NYTimes_ArticlesUITests.swift */; };
 		3D06119823A2346100D5AC77 /* NYModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D06119723A2346100D5AC77 /* NYModel.swift */; };
+		3D06119D23A23F8500D5AC77 /* BaseAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D06119C23A23F8500D5AC77 /* BaseAPIManager.swift */; };
+		3D06119F23A2401900D5AC77 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D06119E23A2401900D5AC77 /* APIResponse.swift */; };
+		3D0611A423A240F700D5AC77 /* NYTimesConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0611A323A240F700D5AC77 /* NYTimesConstants.swift */; };
+		3D0611A623A2468500D5AC77 /* NYTimesAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0611A523A2468500D5AC77 /* NYTimesAPIManager.swift */; };
+		3D0611A823A2493E00D5AC77 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0611A723A2493E00D5AC77 /* EndPoint.swift */; };
+		3D0611AA23A24A2000D5AC77 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0611A923A24A2000D5AC77 /* HTTPMethod.swift */; };
+		3D0611AC23A250B100D5AC77 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0611AB23A250B100D5AC77 /* URLRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +58,13 @@
 		3D06118323A2257400D5AC77 /* NYTimes_ArticlesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTimes_ArticlesUITests.swift; sourceTree = "<group>"; };
 		3D06118523A2257400D5AC77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D06119723A2346100D5AC77 /* NYModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYModel.swift; sourceTree = "<group>"; };
+		3D06119C23A23F8500D5AC77 /* BaseAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPIManager.swift; sourceTree = "<group>"; };
+		3D06119E23A2401900D5AC77 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		3D0611A323A240F700D5AC77 /* NYTimesConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTimesConstants.swift; sourceTree = "<group>"; };
+		3D0611A523A2468500D5AC77 /* NYTimesAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTimesAPIManager.swift; sourceTree = "<group>"; };
+		3D0611A723A2493E00D5AC77 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		3D0611A923A24A2000D5AC77 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		3D0611AB23A250B100D5AC77 /* URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +146,8 @@
 				3D06119523A231E400D5AC77 /* Model */,
 				3D06119623A231F500D5AC77 /* View */,
 				3D06119423A231D700D5AC77 /* ViewController */,
+				3D06119923A23F0400D5AC77 /* Backend */,
+				3D0611A023A2409B00D5AC77 /* Common */,
 				3D06119323A2308B00D5AC77 /* AppDelegate */,
 			);
 			path = Source;
@@ -177,6 +193,59 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		3D06119923A23F0400D5AC77 /* Backend */ = {
+			isa = PBXGroup;
+			children = (
+				3D06119B23A23F3000D5AC77 /* Common */,
+				3D06119A23A23F2300D5AC77 /* Manager */,
+			);
+			path = Backend;
+			sourceTree = "<group>";
+		};
+		3D06119A23A23F2300D5AC77 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				3D06119C23A23F8500D5AC77 /* BaseAPIManager.swift */,
+				3D0611A523A2468500D5AC77 /* NYTimesAPIManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		3D06119B23A23F3000D5AC77 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3D06119E23A2401900D5AC77 /* APIResponse.swift */,
+				3D0611A723A2493E00D5AC77 /* EndPoint.swift */,
+				3D0611A923A24A2000D5AC77 /* HTTPMethod.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		3D0611A023A2409B00D5AC77 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3D0611A223A240CC00D5AC77 /* Costants */,
+				3D0611A123A240BA00D5AC77 /* Extension */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		3D0611A123A240BA00D5AC77 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3D0611AB23A250B100D5AC77 /* URLRequest.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		3D0611A223A240CC00D5AC77 /* Costants */ = {
+			isa = PBXGroup;
+			children = (
+				3D0611A323A240F700D5AC77 /* NYTimesConstants.swift */,
+			);
+			path = Costants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,10 +379,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D0611A623A2468500D5AC77 /* NYTimesAPIManager.swift in Sources */,
 				3D06119823A2346100D5AC77 /* NYModel.swift in Sources */,
 				3D06116623A2257100D5AC77 /* ViewController.swift in Sources */,
+				3D0611A823A2493E00D5AC77 /* EndPoint.swift in Sources */,
 				3D06116223A2257100D5AC77 /* AppDelegate.swift in Sources */,
 				3D06116423A2257100D5AC77 /* SceneDelegate.swift in Sources */,
+				3D06119D23A23F8500D5AC77 /* BaseAPIManager.swift in Sources */,
+				3D0611AC23A250B100D5AC77 /* URLRequest.swift in Sources */,
+				3D0611A423A240F700D5AC77 /* NYTimesConstants.swift in Sources */,
+				3D0611AA23A24A2000D5AC77 /* HTTPMethod.swift in Sources */,
+				3D06119F23A2401900D5AC77 /* APIResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

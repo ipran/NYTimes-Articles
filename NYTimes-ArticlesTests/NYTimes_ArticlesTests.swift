@@ -10,6 +10,7 @@ import XCTest
 @testable import NYTimes_Articles
 
 class NYTimes_ArticlesTests: XCTestCase {
+    var expectation: XCTestExpectation?
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -29,6 +30,28 @@ class NYTimes_ArticlesTests: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
         }
+    }
+    
+    func testHomeAPI() {
+        self.expectation = XCTestExpectation(description: "Fetching home data...")
+        let apiManager = NYTimesAPIManager()
+        
+        apiManager.fetchData { (response) in
+            switch(response) {
+            case let .failure(error):
+                print(error.localizedDescription)
+                XCTFail()
+                break
+            case let .success(result):
+                XCTAssertNotNil(result.results, "Home API Failed")
+                print(result.results.description)
+                
+            }
+            self.expectation?.fulfill()
+            
+        }
+        wait(for: [self.expectation!], timeout: 20)
+        
     }
 
 }
