@@ -47,3 +47,13 @@ struct NYTimesAccessibilityIdentifier {
 
 // Show/Hide log details
 let logActivity = true
+
+// Support Storyboards
+enum NYStoryboard: String {
+    
+    case Main
+    
+    var name: String {
+        return self.rawValue
+    }
+}

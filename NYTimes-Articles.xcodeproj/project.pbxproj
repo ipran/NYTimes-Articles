@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -29,6 +29,8 @@
 		3D0611B323A2719600D5AC77 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0611B223A2719600D5AC77 /* UIViewController.swift */; };
 		3D0611B523A271C100D5AC77 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0611B423A271C100D5AC77 /* UITableViewCell.swift */; };
 		3D0611B723A272F400D5AC77 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0611B623A272F400D5AC77 /* UIImageView.swift */; };
+		3DBDC8B623A3AA9D009CC49C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBDC8B523A3AA9D009CC49C /* DetailViewController.swift */; };
+		3DBDC8B823A3ACED009CC49C /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBDC8B723A3ACED009CC49C /* UIStoryboard.swift */; };
 		4C68AE5906DFF79AE8FFDB18 /* Pods_NYTimes_Articles_NYTimes_ArticlesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0D8CDA964E9410C263CABA /* Pods_NYTimes_Articles_NYTimes_ArticlesUITests.framework */; };
 		E1EC51747FFCBC670980B5AD /* Pods_NYTimes_ArticlesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A03D6456C5CC92E060DC51 /* Pods_NYTimes_ArticlesTests.framework */; };
 /* End PBXBuildFile section */
@@ -82,6 +84,8 @@
 		3D0611B223A2719600D5AC77 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		3D0611B423A271C100D5AC77 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		3D0611B623A272F400D5AC77 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		3DBDC8B523A3AA9D009CC49C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3DBDC8B723A3ACED009CC49C /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
 		41C83B38176AAB46D82181D7 /* Pods-NYTimes-Articles.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTimes-Articles.release.xcconfig"; path = "Target Support Files/Pods-NYTimes-Articles/Pods-NYTimes-Articles.release.xcconfig"; sourceTree = "<group>"; };
 		69DAB51F433BFCDB12C46D3D /* Pods-NYTimes-ArticlesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTimes-ArticlesTests.release.xcconfig"; path = "Target Support Files/Pods-NYTimes-ArticlesTests/Pods-NYTimes-ArticlesTests.release.xcconfig"; sourceTree = "<group>"; };
 		AD1412458B0AB8A5AC1180CE /* Pods-NYTimes-Articles.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTimes-Articles.debug.xcconfig"; path = "Target Support Files/Pods-NYTimes-Articles/Pods-NYTimes-Articles.debug.xcconfig"; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				3D06116523A2257100D5AC77 /* HomeViewController.swift */,
+				3DBDC8B523A3AA9D009CC49C /* DetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -278,6 +283,7 @@
 				3D0611B223A2719600D5AC77 /* UIViewController.swift */,
 				3D0611B423A271C100D5AC77 /* UITableViewCell.swift */,
 				3D0611B623A272F400D5AC77 /* UIImageView.swift */,
+				3DBDC8B723A3ACED009CC49C /* UIStoryboard.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -308,7 +314,6 @@
 				323A33950178170D62E0D228 /* Pods-NYTimes-ArticlesTests.debug.xcconfig */,
 				69DAB51F433BFCDB12C46D3D /* Pods-NYTimes-ArticlesTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -552,10 +557,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D0611B523A271C100D5AC77 /* UITableViewCell.swift in Sources */,
+				3DBDC8B623A3AA9D009CC49C /* DetailViewController.swift in Sources */,
 				3D0611B323A2719600D5AC77 /* UIViewController.swift in Sources */,
 				3D0611AF23A265CD00D5AC77 /* ShadowView.swift in Sources */,
 				3D0611A623A2468500D5AC77 /* NYTimesAPIManager.swift in Sources */,
 				3D0611B123A26ECE00D5AC77 /* HomeTableViewCell.swift in Sources */,
+				3DBDC8B823A3ACED009CC49C /* UIStoryboard.swift in Sources */,
 				3D06119823A2346100D5AC77 /* NYModel.swift in Sources */,
 				3D06116623A2257100D5AC77 /* HomeViewController.swift in Sources */,
 				3D0611A823A2493E00D5AC77 /* EndPoint.swift in Sources */,

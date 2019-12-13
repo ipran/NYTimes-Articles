@@ -17,10 +17,16 @@ class HomeViewController: UIViewController {
     var apiManager = NYTimesAPIManager()
     var data: [Result]?
     
+    lazy var detailViewController: DetailViewController = {
+        return UIStoryboard.main().instantiateViewController(withIdentifier: DetailViewController.identifier) as! DetailViewController
+        
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadData()
+        configureTableView()
         
     }
     func loadData() {
@@ -45,6 +51,10 @@ class HomeViewController: UIViewController {
         }
         
     }
+    func configureTableView() {
+        tableView.tableFooterView = UIView()
+        
+    }
     func refreshTableView() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -57,7 +67,7 @@ class HomeViewController: UIViewController {
         activityIndicator.isHidden = true
         
     }
-
+    
 }
 
 // MARK: - TableView Related
@@ -80,6 +90,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return CGFloat(NYTimesConstants.homeTableViewCellHeight)
         
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cellData = data?[indexPath.row]
+        detailViewController.data = cellData
+        self.navigationController?.pushViewController(detailViewController, animated: true)
+        
+    }
     
 }
-

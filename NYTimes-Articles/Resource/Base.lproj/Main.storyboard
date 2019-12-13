@@ -137,7 +137,7 @@
                                     <constraint firstItem="agA-FB-XhL" firstAttribute="leading" secondItem="dMx-OF-f7G" secondAttribute="leading" id="rpv-om-rFI"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vc-hc-AJk">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vc-hc-AJk">
                                 <rect key="frame" x="207" y="453" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
@@ -176,6 +176,82 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="kml-mb-8Wx">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="d0f-so-D6q" customClass="DetailViewController" customModule="NYTimes_Articles" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8hh-Xu-FFC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ic5-Hh-Q6W">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NY Times Popular Articles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yg7-ag-uvn">
+                                        <rect key="frame" x="107.5" y="43" width="199" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="o6Z-Rb-AHG">
+                                        <rect key="frame" x="16" y="41" width="20" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="eat-t7-eJt"/>
+                                            <constraint firstAttribute="height" constant="25" id="m2d-EM-cHZ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQc-XU-T7P">
+                                        <rect key="frame" x="8" y="31" width="47" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="47" id="gBZ-lx-y7G"/>
+                                            <constraint firstAttribute="height" constant="44" id="gVq-OJ-53O"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="backButtonTapped:" destination="d0f-so-D6q" eventType="touchUpInside" id="ZDg-Tm-BOc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="yg7-ag-uvn" firstAttribute="centerX" secondItem="Ic5-Hh-Q6W" secondAttribute="centerX" id="3vY-nv-37Q"/>
+                                    <constraint firstAttribute="bottom" secondItem="yg7-ag-uvn" secondAttribute="bottom" constant="24" id="OTL-dM-VY0"/>
+                                    <constraint firstItem="o6Z-Rb-AHG" firstAttribute="leading" secondItem="Ic5-Hh-Q6W" secondAttribute="leading" constant="16" id="Zar-6G-GYO"/>
+                                    <constraint firstAttribute="height" constant="88" id="bPc-x1-yki"/>
+                                    <constraint firstAttribute="bottom" secondItem="lQc-XU-T7P" secondAttribute="bottom" constant="13" id="bwm-A9-Th8"/>
+                                    <constraint firstAttribute="bottom" secondItem="o6Z-Rb-AHG" secondAttribute="bottom" constant="22" id="kkj-7W-dsN"/>
+                                    <constraint firstItem="lQc-XU-T7P" firstAttribute="leading" secondItem="Ic5-Hh-Q6W" secondAttribute="leading" constant="8" id="nuK-0w-sfn"/>
+                                </constraints>
+                            </view>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6NB-Q5-fvl">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6NB-Q5-fvl" firstAttribute="leading" secondItem="4cN-g9-CXz" secondAttribute="leading" id="BBo-2Y-JE1"/>
+                            <constraint firstItem="6NB-Q5-fvl" firstAttribute="trailing" secondItem="4cN-g9-CXz" secondAttribute="trailing" id="bMd-rd-cnL"/>
+                            <constraint firstItem="Ic5-Hh-Q6W" firstAttribute="leading" secondItem="4cN-g9-CXz" secondAttribute="leading" id="jP7-Hp-LRK"/>
+                            <constraint firstItem="Ic5-Hh-Q6W" firstAttribute="top" secondItem="8hh-Xu-FFC" secondAttribute="top" id="lgq-Ic-neG"/>
+                            <constraint firstItem="Ic5-Hh-Q6W" firstAttribute="trailing" secondItem="4cN-g9-CXz" secondAttribute="trailing" id="nW4-oK-Hw6"/>
+                            <constraint firstAttribute="bottom" secondItem="6NB-Q5-fvl" secondAttribute="bottom" id="pFx-v3-A4L"/>
+                            <constraint firstItem="6NB-Q5-fvl" firstAttribute="top" secondItem="Ic5-Hh-Q6W" secondAttribute="bottom" id="rKh-Kf-Umd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4cN-g9-CXz"/>
+                    </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="yg7-ag-uvn" id="dk7-5I-aSs"/>
+                        <outlet property="webView" destination="6NB-Q5-fvl" id="kLD-dk-oRC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ALe-l7-Qa8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1821.7391304347827" y="137.94642857142856"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="sIg-Dy-wRK">
             <objects>
@@ -197,6 +273,7 @@
     </scenes>
     <resources>
         <image name="calendar" width="16" height="16"/>
+        <image name="left-arrow" width="32" height="32"/>
         <image name="right-arrow" width="16" height="16"/>
     </resources>
 </document>
