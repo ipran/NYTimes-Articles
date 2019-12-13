@@ -37,23 +37,15 @@ struct NYTimesMessages {
     
 }
 
-// Accessibility Identifier for UITesting
-struct NYTimesAccessibilityIdentifier {
-    static let homeTableView = "HomeTableView"
-    static let tableViewCellIamge = "Cell Image"
-    static let tableViewCell = ""
-    
-}
-
 // Show/Hide log details
 let logActivity = true
 
 // Support Storyboards
 enum NYStoryboard: String {
-    
     case Main
-    
     var name: String {
         return self.rawValue
+        
     }
+    
 }

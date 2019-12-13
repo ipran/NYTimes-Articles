@@ -73,10 +73,32 @@ class NYTimes_ArticlesTests: XCTestCase {
         
     }
     
+    // MARK: - Localized Description Test
     func testLocalizedDescriptionForAPIError() {
         let errorString = "Sorry, couldn't communicate with the server. Please check your network connection."
         assert(errorString == APIError.requestFailed.localizedDescription, "localized description of request failed APIError value is wrong")
         
     }
+    func testLocalizedDescriptionForNYTimesMessages() {
+        let errorString = "Sorry, couldn't communicate with the server. Please check your network connection."
+        assert(errorString == NYTimesMessages.requestFailed, "localized description of request failed APIError value is wrong")
+        
+    }
+    func testLocalizedDescriptionForNYTimesConstant() {
+        let errorString = "NYTimes-Articles"
+        assert(errorString == NYTimesConstants.appName, "NYTimes-Articles")
+        
+    }
+    func testLocalizedDescriptionForNYTimesStoryboard() {
+        let errorString = "Main"
+        assert(errorString == NYTimesStoryboard.main, "Main")
+        
+    }
+    func testLocalizedDescriptionForNYTimesURLConstants() {
+        let errorString = "http://api.nytimes.com"
+        assert(errorString == NYTimesURLConstants.baseURL, "http://api.nytimes.com")
+        
+    }
+    
 
 }
