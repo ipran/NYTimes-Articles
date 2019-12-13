@@ -31,6 +31,8 @@ class HomeTableViewCell: UITableViewCell {
     }
     func configureCell(_ data: Result?) {
         headingLabel.text = data?.title
+        authorLabel.text = data?.byline
+        dateLabel.text = data?.publishedDate
         
     }
 
