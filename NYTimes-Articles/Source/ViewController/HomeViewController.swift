@@ -32,14 +32,13 @@ class HomeViewController: UIViewController {
                 
             case let .failure(error):
                 self.noResponseLabel.text = error.localizedDescription
-                self.activityIndicator.stopAnimating()
+                self.stopAnimatingActivityIndicator()
                 break
                 
             case let .success(result):
                 self.data = result.results
-                self.activityIndicator.stopAnimating()
-                print(result.results.description)
-                
+                self.stopAnimatingActivityIndicator()
+                self.refreshTableView()
                 
             }
             
@@ -53,9 +52,15 @@ class HomeViewController: UIViewController {
         }
         
     }
+    func stopAnimatingActivityIndicator() {
+        activityIndicator.stopAnimating()
+        activityIndicator.isHidden = true
+        
+    }
 
 }
 
+// MARK: - TableView Related
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data?.count ?? 0
