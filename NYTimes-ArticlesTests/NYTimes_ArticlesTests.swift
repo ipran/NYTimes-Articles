@@ -32,6 +32,7 @@ class NYTimes_ArticlesTests: XCTestCase {
         }
     }
     
+    // MARK: - API Test
     func testHomeAPI() {
         self.expectation = XCTestExpectation(description: "Fetching home data...")
         let apiManager = NYTimesAPIManager()
@@ -51,6 +52,30 @@ class NYTimes_ArticlesTests: XCTestCase {
             
         }
         wait(for: [self.expectation!], timeout: 20)
+        
+    }
+    
+    // MARK: - KingFisher library test
+    func testImageDownloaded() {
+        let placeHolerImage = #imageLiteral(resourceName: "placeholder")
+        let imageView = UIImageView()
+        let url = URL(string: "https://image.flaticon.com/icons/png/512/40/40323.png")
+        imageView.loadImageFrom(url!)
+        print(imageView.image!)
+        assert(placeHolerImage == imageView.image , "error")
+        
+    }
+    
+    // MARK: - TableViewCell Identifier test
+    func testHomeTableViewCellIdentifier() {
+        let tableViewCellIdentifier = HomeTableViewCell.identifier
+        assert(tableViewCellIdentifier == "HomeTableViewCell", "Home tableview cell identifier test failed")
+        
+    }
+    
+    func testLocalizedDescriptionForAPIError() {
+        let errorString = "Sorry, couldn't communicate with the server. Please check your network connection."
+        assert(errorString == APIError.requestFailed.localizedDescription, "localized description of request failed APIError value is wrong")
         
     }
 
