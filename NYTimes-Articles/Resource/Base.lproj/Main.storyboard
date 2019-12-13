@@ -230,11 +230,16 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="yAR-x4-cx3">
+                                <rect key="frame" x="197" y="443" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="yAR-x4-cx3" firstAttribute="centerX" secondItem="4cN-g9-CXz" secondAttribute="centerX" id="1BW-QG-AMJ"/>
                             <constraint firstItem="6NB-Q5-fvl" firstAttribute="leading" secondItem="4cN-g9-CXz" secondAttribute="leading" id="BBo-2Y-JE1"/>
                             <constraint firstItem="6NB-Q5-fvl" firstAttribute="trailing" secondItem="4cN-g9-CXz" secondAttribute="trailing" id="bMd-rd-cnL"/>
+                            <constraint firstItem="yAR-x4-cx3" firstAttribute="centerY" secondItem="4cN-g9-CXz" secondAttribute="centerY" id="bZZ-uK-TUr"/>
                             <constraint firstItem="Ic5-Hh-Q6W" firstAttribute="leading" secondItem="4cN-g9-CXz" secondAttribute="leading" id="jP7-Hp-LRK"/>
                             <constraint firstItem="Ic5-Hh-Q6W" firstAttribute="top" secondItem="8hh-Xu-FFC" secondAttribute="top" id="lgq-Ic-neG"/>
                             <constraint firstItem="Ic5-Hh-Q6W" firstAttribute="trailing" secondItem="4cN-g9-CXz" secondAttribute="trailing" id="nW4-oK-Hw6"/>
@@ -244,6 +249,7 @@
                         <viewLayoutGuide key="safeArea" id="4cN-g9-CXz"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndiacator" destination="yAR-x4-cx3" id="FGX-SQ-k42"/>
                         <outlet property="titleLabel" destination="yg7-ag-uvn" id="dk7-5I-aSs"/>
                         <outlet property="webView" destination="6NB-Q5-fvl" id="kLD-dk-oRC"/>
                     </connections>

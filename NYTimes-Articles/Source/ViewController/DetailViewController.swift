@@ -9,13 +9,15 @@
 import UIKit
 import WebKit
 
-class DetailViewController: UIViewController,WKNavigationDelegate {
+class DetailViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var activityIndiacator: UIActivityIndicatorView!
     
     var data: Result?
     
+    // MARK: - View LifeCycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -33,9 +35,9 @@ class DetailViewController: UIViewController,WKNavigationDelegate {
         webView.load(URLRequest(url: URL(string:"about:blank")!))
         
     }
+    // Load WKWebView
     func loadWebView() {
         let url = URL(string: data!.url)!
-        print("URL ***** \(url)")
         webView.load(URLRequest(url: url))
         webView.allowsBackForwardNavigationGestures = true
     }
@@ -46,6 +48,31 @@ class DetailViewController: UIViewController,WKNavigationDelegate {
 extension DetailViewController {
     @IBAction func backButtonTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+        
+    }
+    
+}
+
+// MARK: - WKNavigationDelegate
+extension DetailViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        activityIndiacator.startAnimating()
+        
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        stopAnimatingActivityIndicator()
+        
+    }
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        stopAnimatingActivityIndicator()
+        
+    }
+    func stopAnimatingActivityIndicator() {
+        DispatchQueue.main.async {
+            self.activityIndiacator.stopAnimating()
+            self.activityIndiacator.isHidden = true
+        }
         
     }
     
