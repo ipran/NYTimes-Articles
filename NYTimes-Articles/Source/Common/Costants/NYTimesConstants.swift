@@ -10,7 +10,7 @@ import Foundation
 
 struct NYTimesConstants {
     static let appName = "NYTimes-Articles"
-    static let homeTableViewCellHeight = 90
+    static let homeTableViewCellHeight = 127
     
 }
 

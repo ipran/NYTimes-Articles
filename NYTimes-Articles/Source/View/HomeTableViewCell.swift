@@ -9,15 +9,29 @@
 import UIKit
 
 class HomeTableViewCell: UITableViewCell {
+    // MARK: - Outlets
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
+    var data: Result? {
+        didSet {
+            configureCell(data)
+            
+        }
+        
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Make rounded thumbnail
         thumbnailImageView.makeRounded()
+        
+    }
+    func configureCell(_ data: Result?) {
+        headingLabel.text = data?.title
+        
     }
 
 }
