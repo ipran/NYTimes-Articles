@@ -34,6 +34,9 @@ class HomeTableViewCell: UITableViewCell {
         authorLabel.text = data?.byline
         dateLabel.text = data?.publishedDate
         
+        // Set thumbnail image
+        let thumbnailImgUrl = URL(string: (data?.media[0].mediaMetadata[7].url)!)
+        thumbnailImageView.loadImageFrom(thumbnailImgUrl!)
     }
 
 }
